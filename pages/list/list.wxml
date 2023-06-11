@@ -1,0 +1,97 @@
+<!--pages/list/list.wxml-->
+<!-- <text>pages/list/list.wxml</text> -->
+<button bindtap="gettime">
+  获取当前时间
+</button>
+<view>
+  {{time}}
+</view>
+<!-- 事件 -->
+<!-- 点击事件 -->
+<view>
+  <button type="primary" bindtap="add" data-info="{{1}}">+1</button>
+  <button type="primary" bindtap="add" data-info="{{2}}">+2</button>
+  <button type="primary" plain>count：{{count}}</button>
+</view>
+<!-- 输入事件 -->
+<input bindinput="inputhandle" placeholder="输入框绑定事件"></input>
+输入的值：{{text}}
+<!-- wx:if -->
+<button bindtap="setshow" type="primary">修改isshow</button>
+isshow：{{isshow}}
+<view wx:if="{{isshow}}">
+  wx:if显示信息
+</view>
+<!-- wxhidden -->
+<view hidden="{{!isshow}}">
+  hidden显示信息
+</view>
+
+<!-- 列表渲染 -->
+<view wx:for="{{array1}}" wx:key="index">
+  索引是：{{index}} 当前项是：{{item}}
+</view>
+-----------------------
+<!-- 基本不用 -->
+<view wx:for="{{array2}}" wx:for-index="id" wx:for-item="itemName" wx:key="id">
+  索引是：{{id}} 当前项是：{{itemName}}
+</view>
+-----------------------
+<view wx:for="{{userlist}}" wx:key="index">
+  索引：{{index}}-userid:{{item.userid}}-username:{{item.name}}
+</view>
+
+<scroll-view class="container1" scroll-y>
+  <view>A</view>
+  <view>B</view>
+  <view>C</view>
+</scroll-view>
+
+<swiper class="swiper-container" indicator-dots autoplay circular interval="2000">
+  <swiper-item>
+    <view class="item">A</view>
+  </swiper-item>
+  <swiper-item>
+    <view class="item">B</view>
+  </swiper-item>
+  <swiper-item>
+    <view class="item">C</view>
+  </swiper-item>
+</swiper>
+
+
+<view>
+  {{msg}}
+</view>
+<!-- 长按选择复制等 -->
+<view>
+  手机号支持长按选中
+  <text user-select>1999999999</text>
+</view>
+
+<!-- html -->
+<rich-text nodes="<h1 style='color:red;'>标题</h1>">
+</rich-text>
+
+<!-- 按钮 -->
+<button bindtap="gettime">普通按钮</button>
+<button type="primary">普通按钮</button>
+<button type="warn">警告按钮</button>
+<!-- 小尺寸按钮 -->
+<button size="mini">普通按钮</button>
+<button size="mini" type="primary">普通按钮</button>
+<button size="mini" type="warn">警告按钮</button>
+<!-- 镂空按钮 -->
+<button plain size="mini">普通按钮</button>
+<button plain size="mini" type="primary">普通按钮</button>
+<button plain size="mini" type="warn">警告按钮</button>
+
+
+
+<!-- 图片 -->
+<image></image>
+<!-- <image src="/images/python.jpg" mode="scaleToFill"/> -->
+<image src="/images/python.jpg" mode="aspectFit" />
+<!-- <image src="/images/python.jpg" mode="aspectFill"/> -->
+<!-- <image src="/images/python.jpg" mode="widthFix"/> -->
+<!-- <image src="/images/python.jpg" mode="heightFix"/> -->
