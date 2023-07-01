@@ -1,14 +1,38 @@
 {
   "pages": [
+    "pages/home/home",
+    "pages/list/list",
+    "pages/test/test",
     "pages/index/index",
     "pages/logs/logs",
-    "pages/list/list"
+    "pages/message/message"
   ],
+  "tabBar": {
+    "backgroundColor": "#fff",
+    "position": "bottom",
+    "list": [
+      {
+        "pagePath": "pages/home/home",
+        "text": "首页",
+        "iconPath": "/images/tabs/index.png",
+        "selectedIconPath": "/images/tabs/index-active.png"
+      },
+      {
+        "pagePath": "pages/message/message",
+        "text": "消息",
+        "iconPath": "/images/tabs/message.png",
+        "selectedIconPath": "/images/tabs/message-active.png"
+      }
+    ]
+  },
   "window": {
-    "backgroundTextStyle": "light",
+    "backgroundTextStyle": "dark",
     "navigationBarBackgroundColor": "#fff",
     "navigationBarTitleText": "鱼仔的小程序",
-    "navigationBarTextStyle": "black"
+    "navigationBarTextStyle": "black",
+    "enablePullDownRefresh": true,
+    "backgroundColor": "#efefef",
+    "onReachBottomDistance": 50
   },
   "style": "v2",
   "sitemapLocation": "sitemap.json"

@@ -37,11 +37,12 @@ isshow：{{isshow}}
   索引是：{{id}} 当前项是：{{itemName}}
 </view>
 -----------------------
-<view wx:for="{{userlist}}" wx:key="index">
+<view wx:for="{{userlist}}" wx:key="index" class="username">
   索引：{{index}}-userid:{{item.userid}}-username:{{item.name}}
 </view>
 
 <scroll-view class="container1" scroll-y>
+<view>滑动下面的</view>
   <view>A</view>
   <view>B</view>
   <view>C</view>
