@@ -1,2 +1,32 @@
 <!--pages/home/home.wxml-->
-<text>pages/home/home.wxml</text>
+<!-- <text>pages/home/home.wxml</text> -->
+<view class="title">实时热点</view>
+<view>
+  <radio-group bindchange="handleChange">平台：
+    <!-- <radio value="male">男</radio> -->
+    <!-- <radio value="female">女</radio> -->
+    <radio wx:for="{{category}}" wx:key="index" value="{{item.value}}">
+      {{item.name}}
+    </radio>
+  </radio-group>
+</view>
+
+<view>更新时间：{{uptime}}</view>
+<!-- <view>您选中的是：{{gender}}</view> -->
+<button bindtap="getinfo" type="primary">查询</button>
+<view>{{title}}</view>
+<!-- <view>{{infoList}}</view> -->
+<view wx:for="{{infoList}}" wx:key="index">
+  {{item.index}}:{{item.title}}
+</view>
+<button><navigator url="/pages/message/message" open-type="switchTab">导航到消息页面</navigator></button>
+<view></view>
+<button><navigator url="/pages/list/list" open-type="navigate">导航到list页面</navigator></button>
+<view></view>
+<button bindtap="gotomsg">js跳转tabbar</button>
+<view></view>
+<button bindtap="gotomsg1">js跳转非tabbar</button>
+传递参数
+<button><navigator url="/pages/list/list?name=zs&age=20">传参跳转</navigator></button>
+<view></view>
+<button bindtap="goparams">js传参跳转</button>

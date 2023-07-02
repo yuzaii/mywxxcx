@@ -5,6 +5,7 @@
     "pages/test/test",
     "pages/index/index",
     "pages/logs/logs",
+    "pages/personal/personal",
     "pages/message/message"
   ],
   "tabBar": {
@@ -22,6 +23,12 @@
         "text": "消息",
         "iconPath": "/images/tabs/message.png",
         "selectedIconPath": "/images/tabs/message-active.png"
+      },
+      {
+        "pagePath": "pages/personal/personal",
+        "text": "个人中心",
+        "iconPath": "/images/tabs/personal.png",
+        "selectedIconPath": "/images/tabs/personal-active.png"
       }
     ]
   },
@@ -30,7 +37,6 @@
     "navigationBarBackgroundColor": "#fff",
     "navigationBarTitleText": "鱼仔的小程序",
     "navigationBarTextStyle": "black",
-    "enablePullDownRefresh": true,
     "backgroundColor": "#efefef",
     "onReachBottomDistance": 50
   },

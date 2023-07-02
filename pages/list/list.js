@@ -6,18 +6,22 @@ Page({
    * 页面的初始数据
    */
   data: {
+    query: {},
     msg: '66666666',
     time: '',
     count: 0,
     text: '',
     isshow: false,
-    array1: ['苹果','华为','小米'],
-    array2: ['苹果','华为','小米'],
+    array1: ['苹果', '华为', '小米'],
+    array2: ['苹果', '华为', '小米'],
     userlist: [
-      {userid:1,name:'张三'},
-      {userid:2,name:'李四'},
-      {userid:3,name:'王五'}
+      { userid: 1, name: '张三' },
+      { userid: 2, name: '李四' },
+      { userid: 3, name: '王五' }
     ]
+  },
+  goback() {
+    wx.navigateBack()
   },
   setshow() {
     this.setData({
@@ -37,7 +41,7 @@ Page({
     })
   },
   gettime(e) {
-    console.log(e);
+    // console.log(e);
     const time = util.formatTime(new Date())
     // console.log(this.time);
     this.setData({
@@ -50,6 +54,11 @@ Page({
    */
   onLoad(options) {
     this.gettime()
+    // console.log(options);
+    this.setData({
+      query: options
+    })
+    console.log(this.data.query);
     // const time=util.formatTime(new Date())
     // this.setData({
     //   // time:util.formatTime(new Date())
@@ -89,6 +98,11 @@ Page({
    * 页面相关事件处理函数--监听用户下拉动作
    */
   onPullDownRefresh() {
+    console.log('触发了刷新');
+    this.setData({
+      count: 0
+    })
+    wx.stopPullDownRefresh()
 
   },
 
@@ -96,7 +110,7 @@ Page({
    * 页面上拉触底事件的处理函数
    */
   onReachBottom() {
-
+    console.log('触底了');
   },
 
   /**

@@ -1,5 +1,8 @@
 <!--pages/list/list.wxml-->
 <!-- <text>pages/list/list.wxml</text> -->
+<view></view>
+<button bindtap="goback">js后退</button>
+<navigator open-type="navigateBack" delta="1">后退1</navigator>
 <button bindtap="gettime">
   获取当前时间
 </button>

@@ -1,1 +1,9 @@
 /* pages/home/home.wxss */
+view {
+  background-color: #fff;
+}
+
+.title {
+  font-size:60rpx;
+  text-align: center;
+}
